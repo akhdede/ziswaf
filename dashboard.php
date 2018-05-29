@@ -9,7 +9,11 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Penanggung Jawab</h5>
-                <h1 class="font-weight-bold">6</h1>
+                <h1 class="font-weight-bold">
+                <?php
+                echo $fungsi->countPJ();
+                ?>
+                </h1>
                 <h4>Orang</h4>
             </div>
         </div>

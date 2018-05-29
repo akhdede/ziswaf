@@ -7,6 +7,28 @@ class fungsi{
         $this->base_url = 'https://localhost/ziswaf';
     }
 
+    public function countPJ(){
+    }
+
+    // tambah data
+    public function tambah($nama_lengkap, $banyak_amplop, $nomor_amplop)
+    {
+        try{
+            $data = $this->db->prepare("INSERT INTO pj_ziswaf(nama_lengkap, banyak_amplop, nomor_amplop) VALUES(:nama_lengkap, :banyak_amplop, :nomor_amplop)");
+            $data->bindparam(":nama_lengkap", $nama_lengkap);
+            $data->bindparam(":banyak_amplop", $banyak_amplop);
+            $data->bindparam(":nomor_amplop", $nomor_amplop);
+            $data->execute();
+            return true;
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+
+    // menampilkan breadcrum disetiap halaman
     public function breadcrumb(){
         if(isset($_GET['page'])){
             $page = $_GET['page'];

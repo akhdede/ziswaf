@@ -4,4 +4,4 @@
     $fungsi->breadcrumb();
     ?>
 </div>
-<a class="btn btn-primary" href="<?php echo $fungsi->base_url.'/index.php?page=add_data'; ?>">Tambah data</a>
+<a class="btn btn-primary" href="index.php?page=add_data">Tambah data</a>
